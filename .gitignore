@@ -1,0 +1,9 @@
+#Markdown
+.DS_Store
+*.toc
+*.gz
+*.fls
+*.aux
+*.out
+*.log
+*.fdb_latexmk
