@@ -6,5 +6,6 @@
 *.aux
 *.out
 *.log
+*.fdb_latexmk
 *.fdb_latex
 Model
