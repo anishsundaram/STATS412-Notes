@@ -189,4 +189,72 @@
     Order of events doesnt matter. Combinations are written as:
     $$_nC_R = \frac{n!}{(n-R)!R!}$$ 
 \end{definition}
+
+\subsection*{3.7 Multinomial Coefficients}
+
+\begin{definition}
+    \textbf{Multinomial Coefficients}:
+    Generalizations of binomial coefficients with a combinatorial interpretation. Because we have copies of the same letter multiple times we must discount the total number of permutations. 
+     
+\end{definition}
+
+\section*{4 Conditional Probability and Independence}
+
+\subsection*{4.1 Conditional Probability}
+
+\begin{definition}
+    \textbf{Conditional Probability}:
+    The conditional probabilty of an event A given B has occured, or just A given B. This is the same as the probability of the intersection of the two events over the probability of event B:
+    $$\emph{P}(A|B) = \frac{\emph{P}(A \cup B)}{\emph{P}(B)}$$
+    \begin{remark}
+        In a sense, because we know that B has occured it can become out new sample space and thus we re-weight the probability of A accordingly.
+    \end{remark}
+\end{definition}
+
+\subsection*{4.2 Independence}
+
+\begin{definition}
+    \textbf{Independence}: Two events are said to be independent if one event's occurence does not influence the probability that the other event will or will not occur. In math terms it can be defined as :
+    $$\textit(P)(AB) = \textit{P}(A)\textit{P}(B)$$
+    \begin{remark}
+        Logically if two events are independent then their conditional probability will equal the individual probability as the two are not linked, in other words $$P(A|B) = \frac{P(AB)}{P(B)} = \frac{P(A)P(B)}{P(B)} = P(A)$$ and the reverse will also be true in that $$P(B|A) = P(B)$$
+    \end{remark}
+\end{definition}
+
+\begin{definition}
+    \textbf{Independence and exclusivity}:
+    If A and B are independent then so are $A^c$ and $B$ in that 
+    $$P(A^cB) + P(AB) = P(B) \rightleftarrows P(A^cB) = P(B)(1-P(A)) = P(B)P(A^c)$$
+    \begin{remark}
+        If A and B are mutually exclusive then $P(A|B) = 0$ and so unless $P(A) = 0$, two mutually exlusive events are dependent.
+    \end{remark}
+\end{definition}
+
+
+\subsection*{4.3 Mutually Independent Events}
+
+\begin{definition}
+    \textbf{Mutually Independence}:
+    Each event is independent of any combination of other events in the collection, in other words in a collection of events there is no independence among any of them. Events are said to be mutually indepent if for all events $$P(A_1 \cup A_2 \cup \ldots A_k) = P(A_1)P(A_k)$$
+\end{definition}
+
+\subsection*{4.4 Law of total P}
+
+\begin{theorem}
+    \textit{Law of Total Probability}:
+    A fundamental rule relating marginal probabilities to conditional probabilities. It expresses the total probability of an outcome which can be realized via several distinct events:
+    $$P(A) = P(A|B_1) \cdot P(B_1) + P(A|B_2) \cdot P(B_2) \ldots P(A|B_x) \cdot P(B_X)$$
+
+\end{theorem}
+
+
+\subsection*{4.5 Bayes Theorem}
+
+\begin{theorem}
+    \textit{Bayes Theorem}:
+    A theorem whichdescribes the probability of an event, based on prior knowledge of conditions that might be related to the event:
+    $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+\end{theorem}
+
 \end{document}
