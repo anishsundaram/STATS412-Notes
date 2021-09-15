@@ -1,0 +1,178 @@
+%========================%
+%        Preamble        %
+%========================%
+\documentclass[12pt]{amsart}
+
+    %========================%
+%        Packages        %
+%========================%
+
+\usepackage[utf8]{inputenc}
+%\usepackage{amsmath}    % Included in amsart package
+%\usepackage{amsthm}     % 
+\usepackage{amssymb}      % 
+\usepackage{mathtools}      % Paired Limiter Macros
+% \usepackage{mdframed}       % boxes for theorem
+\usepackage{enumitem}     % Continuous numbering of lists
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{float}
+
+%========================% 
+%          Title         %
+%========================% 
+\title{Lecture 5 and 6}
+\author{Anish Sundaram}
+\date{\today}
+
+%========================% 
+%        Theorems        %
+%========================% 
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}  % Boxed theorems
+\newtheorem{definition}{Definition} % Definitions
+\newtheorem{example}{Example}       %
+\newtheorem{algorithm}{Algorithm}
+\newtheorem*{proof*}{Proof}         % non-numbered
+\newtheorem*{remark}{Remark}        %
+\numberwithin{equation}{theorem}    % Local equation numbering
+
+\setcounter{tocdepth}{3}      % Show subsubsections in contents
+
+%========================% 
+%        Macros          %
+%========================% 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}  % Vertical bars
+\DeclarePairedDelimiter\norm{\lVert}{\rVert} % Double vertical bars
+\newcommand{\drawvec}[1]{                    % matrices on one line
+    \begin{bmatrix}
+        #1
+    \end{bmatrix}
+}
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=5in]{global-carbon-cycle.png}
+%     \caption{The Global Carbon Cycle}
+%     \label{global-carbon-cycle}
+% \end{figure}
+
+%========================% 
+%         Document       %
+%========================% 
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{5 Random Variables}
+\subsection*{5.1 Random Variables}
+
+\begin{definition}
+    \textbf{Random Variable($X$)}:
+    A variable whose value is the numerical output of a random event.
+    There are many forms of Randvars but each is the output of some probability function. 
+\end{definition}
+
+\subsection*{5.2 Discrete Random Variables}
+
+\begin{definition}
+    \textbf{Discrete Random Variable}:
+    A random variable $X$ is said to be discrete if it takes either finitely many or a countable many values.
+    \begin{remark}
+        Examples: \begin{enumerate}
+            \item Experiment: Toss a fair coin $n$ times and let $X$ be the number ofHeads.
+            \item Experiment: The number $X$ of accidents on I-95 during next week.
+            \item Experiment: Let $X$ be the number of coin-tosses until the first Head comes up
+        \end{enumerate}  
+    \end{remark}
+\end{definition}
+
+
+\begin{definition}
+    \textbf{Continous Random Variable}:
+    A random variable $X$ is said to be discrete if it can take any number within a variable.
+    \begin{remark}
+        Examples include the exact time of an event happening or measurements.
+    \end{remark}
+\end{definition}
+
+\subsection*{5.2 Probability Mass Function}
+
+\subsection*{5.3 The Bernoulli Distributions}
+
+\begin{definition}
+    \textbf{Bernoulli Trial}:
+    A defined single trial that is classified as:
+    \begin{enumerate}
+        \item Binary Outcomes, ie Success or Failure
+        \item Independent observations
+        \item Fixed probability
+    \end{enumerate}
+    \begin{remark}
+        Some times Bernoulli Randvars are called \textbf{Indicator Variables}
+    \end{remark}
+\end{definition}
+
+
+
+\begin{definition}
+    \textbf{Probability Mass Function}:
+    An equation which defines the probability the X can take on a value, used for Bernoulli Trials:
+    $$P(X=x) = p^x(1-p)^{1-x}$$ where $X$ is the random variable and $x$ is the specific value(1,0)
+\end{definition}
+
+\begin{definition}
+    \textbf{Bernoulli Distribution}:
+    A probabilistic deescription of the successes or failures of a single Bernoulli experiment/trial. Probability of Success(1) in a Bernouli trial is seen as $p$ whereas probability of failure(0) is seen as $1-p$
+\end{definition}
+
+\begin{definition}
+    \textbf{Mean and Variance of a Bernouli Distribution}:
+    Because the values a Bernoulli trial can have(1,0), we can see that the mean $\mu$ can be described as $$E(X) = p$$ and the variance as $$Var[X] = pq=p(1-p)$$
+\end{definition}
+
+\subsection*{5.4 Binomial Distributions}
+
+\begin{definition}
+    \textbf{Binomial Distribution}:
+    Distribution of the number of successes of a fixed amount($n$) Bernoulli trials. For a binomial distribution the probability of individual events can be calculated using the formula:
+    $$P(X=x) =_nC_x p^xq^{n-x}$$
+\end{definition}
+
+\begin{definition}
+    \textbf{Mean and Variance of a Binomial Distribution}:
+    Because a Binomial distribution is multiple Bernoulli trials the mean can be found by $$\mu = np$$ and the variance can be found by $$\sigma^2 = np(1-p)$$
+\end{definition}
+ 
+
+\subsection*{Cumulative Distribution Functions(CDF)}
+
+\begin{definition}
+    \textbf{Cumulative Distribution Functions(CDF)}:
+    Used to calculate the accumulated probability left of an area. Essentially the integral for values before X, made for Continous distributions.The PDF for a continuous distribtuion is found by $$f(x) = \frac{1}{b-a}$$ whereas the CDF is found by 
+
+\end{definition}
+
+
+\subsection*{Expectations of Discrete Randvars}
+
+\begin{definition}
+    \textbf{Expected Value of Binomial Distribution}:
+    For a Binomial Distribution, the mean ends up being the expected value in that $$E(X) = \mu = n \cdot p$$ across the different values resulting in:
+    $$E(x) = \Sigma x \cdot p(x)$$
+\end{definition}
+
+\subsection*{Variance of Expectation}
+
+\begin{definition}
+    \textbf{Variance of Expected Value}:
+    The variance of the expected value depends on the variance of the distribution, which means that we get the relation $$Var(X) = E[(X-\mu)^2] = E(X^2) - (E(X))^2 = E(X^2) - \mu^2$$ which results in $$\sigma^2 = \Sigma(x-\mu)^2 \cdot p(x)$$
+\end{definition}
+
+\end{document}
