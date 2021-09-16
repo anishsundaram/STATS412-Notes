@@ -151,28 +151,44 @@
 \end{definition}
  
 
-\subsection*{Cumulative Distribution Functions(CDF)}
+\section*{6 Discrete and Continous Random Variables}
 
-\begin{definition}
-    \textbf{Cumulative Distribution Functions(CDF)}:
-    Used to calculate the accumulated probability left of an area. Essentially the integral for values before X, made for Continous distributions.The PDF for a continuous distribtuion is found by $$f(x) = \frac{1}{b-a}$$ whereas the CDF is found by 
-
-\end{definition}
-
-
-\subsection*{Expectations of Discrete Randvars}
+\subsection*{6.1 Expectations of Discrete Randvars}
 
 \begin{definition}
     \textbf{Expected Value of Binomial Distribution}:
-    For a Binomial Distribution, the mean ends up being the expected value in that $$E(X) = \mu = n \cdot p$$ across the different values resulting in:
+    For a Binomial Distribution, the mean ends up being the expected value in that $$E(X) = \mu = X \cdot p_x$$ across the differe'nt values resulting in:
     $$E(x) = \Sigma x \cdot p(x)$$
 \end{definition}
 
-\subsection*{Variance of Expectation}
+\subsection*{6.2 Variance of Expectation}
 
 \begin{definition}
     \textbf{Variance of Expected Value}:
-    The variance of the expected value depends on the variance of the distribution, which means that we get the relation $$Var(X) = E[(X-\mu)^2] = E(X^2) - (E(X))^2 = E(X^2) - \mu^2$$ which results in $$\sigma^2 = \Sigma(x-\mu)^2 \cdot p(x)$$
+    The variance of the expected value depends on the variance of the distribution, which means that we get the relation $$Var(X) = E[(X-\mu)^2] = E(X^2) - (E(X))^2 = E(X^2) - \mu^2$$ which is all derived from $$\sigma^2 = \Sigma(x-\mu)^2 \cdot p(x)$$ from which we can obviously get $$\sigma = \sqrt{Ver[x]}$$
+\end{definition}
+
+\subsection*{6.3 Expectation of sums of Randvars}
+
+\begin{definition}
+    \textbf{Expectation of sums of Randvars}:
+    We have seen that $$E[aX+b] = aE[x]+b$$. From this we can get the result that $$E[X+Y] = E[X] + E[Y]$$ and can be generally described as $$E[{X_1+\ldots X_n] = E[X_1] +\ldots+E{X_n}}$$
+\end{definition}
+
+
+\subsection*{6.4 Cumulative Distribution Functions(CDF)}
+
+\begin{definition}
+    \textbf{Cumulative Distribution Functions(CDF)}:
+    Functions used to calulate the area under the curve left of an input, where area under the curve is equal to the probability in a distribution.
+
+\end{definition}
+
+
+\subsection*{6.5 Probability Density Function(PDF)}
+
+\begin{definition}
+    \textbf{Probability Density Function(PDF)}: Describes the shape of the distribution. Also tells us what the probability is at a specific point on the curve. The PDF must integrate from one such that $$1 = \int_{-\inf}^{\inf}f_x(z_dz)$$ of which the limit bounds may change
 \end{definition}
 
 \end{document}
