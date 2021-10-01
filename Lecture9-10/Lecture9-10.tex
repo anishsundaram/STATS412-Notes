@@ -1,0 +1,183 @@
+%========================%
+%        Preamble        %
+%========================%
+\documentclass[12pt]{amsart}
+
+    %========================%
+%        Packages        %
+%========================%
+
+\usepackage[utf8]{inputenc}
+%\usepackage{amsmath}    % Included in amsart package
+%\usepackage{amsthm}     % 
+\usepackage{amssymb}      % 
+\usepackage{mathtools}      % Paired Limiter Macros
+% \usepackage{mdframed}       % boxes for theorem
+\usepackage{enumitem}     % Continuous numbering of lists
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{float}
+
+%========================% 
+%          Title         %
+%========================% 
+\title{Lecture 9 and 10}
+\author{Anish Sundaram}
+\date{\today}
+
+%========================% 
+%        Theorems        %
+%========================% 
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}  % Boxed theorems
+\newtheorem{definition}{Definition} % Definitions
+\newtheorem{example}{Example}       %
+\newtheorem{algorithm}{Algorithm}
+\newtheorem*{proof*}{Proof}         % non-numbered
+\newtheorem*{remark}{Remark}        %
+\numberwithin{equation}{theorem}    % Local equation numbering
+
+\setcounter{tocdepth}{3}      % Show subsubsections in contents
+
+%========================% 
+%        Macros          %
+%========================% 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}  % Vertical bars
+\DeclarePairedDelimiter\norm{\lVert}{\rVert} % Double vertical bars
+\newcommand{\drawvec}[1]{                    % matrices on one line
+    \begin{bmatrix}
+        #1
+    \end{bmatrix}
+}
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=5in]{global-carbon-cycle.png}
+%     \caption{The Global Carbon Cycle}
+%     \label{global-carbon-cycle}
+% \end{figure}
+
+%========================% 
+%         Document       %
+%========================% 
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{9 Important Families of Probability Distributions}
+\subsection*{9.1 Variance of sums of Randvars}
+
+\begin{definition}
+    \textbf{Combination of Variance of RV}:
+    $$Var(aX \pm bY) = a^2Var(X)+b^2Var(y) \pm 2Corr(X,Y)$$
+\end{definition}
+
+
+\subsection*{9.2 Weak law of Large Numbers}
+
+\begin{theorem}
+    \textit{Weak Law of Large Numbers}:
+    If you repeat an experiment multiple times, the observed average will
+    approach the theoretical average and eventually converge on the actual value
+\end{theorem}
+
+\subsection*{9.3 Markovs and Chebyshevs Inequalities}
+
+\begin{theorem}
+    \textit{Markovs Inequality}:
+    If we have a non-negative Random Variable and a positive number the probability that the RandVar exceeds the number is dependent on the relationship $$P(X \leq a) \geq \frac{E[X]}{a}$$
+
+\end{theorem}
+
+\begin{theorem}
+    \textit{Chebyshevs Inequality}:
+    If we have a very small variance then X is unlikely to be too far from the mean. This is described by :
+    $$P(|X-\mu|) \geq c) \leq \frac{\sigma^2}{c^2}$$
+\end{theorem}
+
+\subsection*{9.4 Binomial distributions}
+
+\begin{definition}
+    \textbf{Binomial Distribution}:
+    Used when trying to find the probability of X successes of multiple bernoulli trials and is found using
+    the equation $$P(X=x) = {n\choose x} p^xq^{n-x} $$
+    \begin{itemize}
+        \item $Mean:\mu_x = n\cdot P$
+        \item $Variance: \sigma_x^2 = n\cdot P(1-P)$
+        \item $Stdev: \sigma_x = \sqrt{n\cdot P(1-P)}$
+    \end{itemize}
+\end{definition}
+
+
+\subsection*{9.5 Geometric Distributions}
+
+\begin{definition}
+    \textbf{Geometric Distribution}:
+    Used when trying to find the probability of the first success happening on the Nth trial, 
+    and is found with the equation $$P(X=x) = q^{x-1}p$$
+    \begin{itemize}
+        \item $Mean:\mu_x = 1/P$
+        \item $Variance: \sigma_x^2 =(\frac{1}{p})(\frac{1}{p}-1)$
+        \item $Stdev: \sqrt{(\frac{1}{p})(\frac{1}{p}-1)}$
+        \item $P(X\leq x) = 1-q^x$
+        \item $P(X > x) = q^x$
+    \end{itemize}
+\end{definition}
+
+\subsection*{9.6 Poisson Distribution}
+
+\begin{definition}
+    \textbf{Poisson Distribution}:
+    Used when trying to find the events that occur during a fixed time interval
+    or region of opportunity, where the expected value($\lambda$) is known. Found using 
+    $$P(X=x) = \frac{\mu^xe^{-\mu}}{x!}$$ and actually continue ad infinitum
+    \begin{itemize}
+        \item $Mean:\mu_x = \lambda$
+        \item $Variance: \sigma_x^2 =\lambda$
+        \item $Stdev: \sqrt{\lambda}$
+        \item $P(X\leq x) = e^{-\mu}\sum_{i=0}^x\frac{\mu^i}{i!}$
+        \item $P(X > x) = 1-P(X\leq x)$
+    \end{itemize}
+    
+\end{definition}
+
+\begin{definition}
+    \textbf{Law of rare events}:
+    The law of rare events or Poisson limit theorem states that the Poisson distribution may be used as an approximation to the binomial distribution, under certain conditions.When the size of the population $n$ is very large and the occurrence of certain event $A$ is rare, where $p$, the probability of $A$ is very small, the binomial random variable $X$ can be approximated by a Poisson random variable.
+\end{definition}
+
+\section*{10 Important Families of Discrete Probability Distributions (cont’d)}
+
+\subsection*{Poisson Process}
+
+\begin{definition}
+    \textbf{Poisson Process}:
+
+
+\end{definition}
+
+\subsection*{Thinning property of Poisson}
+
+\subsection*{Hypergeometric Distribution}
+
+\begin{definition}
+    \textbf{Hypergeometric Distribution}:
+
+\end{definition}
+    We are randomly sampling $n$ objects without replacement from a source that contains $a$ successes and $N-a$ failures, wherein $X$ represents the number of success 
+    $$P(X=x) =\frac{{ a\choose x}{ N-a \choose N-x}}{{N \choose n}}$$
+    \begin{itemize}
+        \item $Mean:\mu_x = n\frac{a}{N}$
+        \item $Variance: \sigma_x^2 = \frac{na}{N}(1-\frac{a}{N})(\frac{N-n}{N-1})$
+        \item $Stdev: \sqrt{(\frac{1}{p})(\frac{1}{p}-1)}$
+        \item $P(X\leq x) = 1-q^x$
+        \item $P(X > x) = q^x$
+    \end{itemize}
+
+\end{document}
