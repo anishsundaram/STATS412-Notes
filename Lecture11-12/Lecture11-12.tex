@@ -1,0 +1,117 @@
+%========================%
+%        Preamble        %
+%========================%
+\documentclass[12pt]{amsart}
+
+    %========================%
+%        Packages        %
+%========================%
+
+\usepackage[utf8]{inputenc}
+%\usepackage{amsmath}    % Included in amsart package
+%\usepackage{amsthm}     % 
+\usepackage{amssymb}      % 
+\usepackage{mathtools}      % Paired Limiter Macros
+% \usepackage{mdframed}       % boxes for theorem
+\usepackage{enumitem}     % Continuous numbering of lists
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{float}
+
+%========================% 
+%          Title         %
+%========================% 
+\title{Lecture 11 and 12}
+\author{Anish Sundaram}
+\date{\today}
+
+%========================% 
+%        Theorems        %
+%========================% 
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}  % Boxed theorems
+\newtheorem{definition}{Definition} % Definitions
+\newtheorem{example}{Example}       %
+\newtheorem{algorithm}{Algorithm}
+\newtheorem*{proof*}{Proof}         % non-numbered
+\newtheorem*{remark}{Remark}        %
+\numberwithin{equation}{theorem}    % Local equation numbering
+
+\setcounter{tocdepth}{3}      % Show subsubsections in contents
+
+%========================% 
+%        Macros          %
+%========================% 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}  % Vertical bars
+\DeclarePairedDelimiter\norm{\lVert}{\rVert} % Double vertical bars
+\newcommand{\drawvec}[1]{                    % matrices on one line
+    \begin{bmatrix}
+        #1
+    \end{bmatrix}
+}
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=5in]{global-carbon-cycle.png}
+%     \caption{The Global Carbon Cycle}
+%     \label{global-carbon-cycle}
+% \end{figure}
+
+%========================% 
+%         Document       %
+%========================% 
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{11 Important Families of Continuous Probability Distributions}
+\subsection*{11.1 Exponential Distributions}
+
+\begin{definition}
+    \textbf{Exponential Distributions}:
+    Used to model a process in which events occur continuously and independently at a constant average rate. The formula for these distributions is:
+    $$f(x) = \begin{cases}
+        \lambda e ^{-\lambda x}  & \text{if } x > 0 \\
+        0  & otherwise
+  \end{cases} \quad$$
+  wherein $\lambda$ is referred to as the rate.
+  \begin{itemize}
+    \item $\lambda = \frac{1}{X}$
+    \item $Mean:E[X] = \frac{1}{\lambda}$
+    \item $Variance: \sigma_x^2 = \frac{1}{\lambda^2}$
+    \item $Stdev: \sigma_x = \sqrt{\frac{1}{\lambda^2}} = \frac{1}{X\sqrt{n}}$
+    \item $CDF: P(X < x) = \begin{cases}
+        1-e ^{-\lambda x}  & \text{if } x \geq 0 \\
+    \end{cases} \quad$
+    \item $CDF: P(X > x) = \begin{cases}
+        e ^{-\lambda x}  & \text{if } x \geq 0 \\
+    \end{cases} \quad$
+\end{itemize}
+\end{definition}
+
+
+
+\subsection*{11.2 Gamma Distribution}
+
+\begin{definition}
+    \textbf{Gamma Distribution}:
+    The gamma distribution is a continuous distribution, one of whose purposes is to extend the usefulness of the exponential distribution in modeling waiting times. It involves a certain integral known as the gamma function. 
+    Described by the PDF:
+    $$f(x) = \begin{cases}
+        \frac{\lambda^rx^{r-1}e^{-\lambda x}}{\Gamma(r} & \text{if } x > 0 \\
+        0  & otherwise
+  \end{cases} \quad$$
+  \begin{itemize}
+    \item $\lambda = \frac{1}{X}$
+    \item $Mean:E[X] = \frac{r}{\lambda}$
+    \item $Variance: \sigma_x^2 = \frac{r}{\lambda^2}$
+\end{itemize}
+\end{definition}
+
+\end{document}
