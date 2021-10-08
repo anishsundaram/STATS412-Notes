@@ -114,4 +114,69 @@
 \end{itemize}
 \end{definition}
 
+
+\section*{12 Simulations.The Normal Distribution and the CLT}
+
+\subsection*{12.1 The Normal Distribution}
+
+
+\begin{definition}
+    \textbf{Normal Distribution}:
+    Normal distribution, also known as the Gaussian distribution, is a probability distribution that is symmetric about the mean, showing that data near the mean are more frequent in occurrence than data far from the mean. In graph form, normal distribution will appear as a bell curve. Normal distributions are described by 
+
+    \begin{itemize}
+        \item $X = \mu + Z\sigma$
+        \item $Mean:\mu= np$
+        \item $Standard Deviation: \sigma = \sqrt{npq}$
+        \item $Variance: \sigma_x^2 = npql$
+        \item $PDF: \frac{1}{\sigma \sqrt{2\pi}}e^{-.5(\frac{X-\mu}{\sigma})^2}$
+    \end{itemize}
+    \begin{remark}
+        The normal distribution is commonly associated with the 68-95-99.7 rule which you can see in the image above. 68 $\%$ of the data is within 1 standard deviation of the mean , 95 $\%$ of the data is within 2 standard deviations of the mean, and 99.7 $\%$ of the data is within 3 standard deviations of the mean
+    \end{remark}
+\end{definition}
+
+\begin{definition}
+    \textbf{Standard Normal Distribution}:
+    The ideal form of a normal distribution wherein the mean is 0 and the standard deviation is 1, and the distribution the tables work on. To convert to a standard normal we need a z-score.
+\end{definition}
+
+
+\begin{definition}
+    \textbf{Z-score}:
+    A method of converting any distribution into one appropirate for using a standard normal Distribution table:
+    $$Z = \frac{X-\mu}{\sigma}$$
+    Z is a measure of how far a value is from the mean in terms of standard deviations.
+\end{definition}
+
+
+\begin{definition}
+    \textbf{Sum of normal Randvars}:
+    If the 2 randvars are independent, for the mean and variance of X+Y we have 
+    $$\mu = \mu_X + \mu_Y$$
+    and $$\sigma^2 = \sigma_X^2 + \sigma_Y^2$$
+\end{definition}
+
+\subsection*{12.2 Central Limit Theorem}
+
+\begin{definition}
+    \textbf{Central Limit Theorem(CLT)}:
+    As $n$ increases, the distribution of the sample mean or sum approaches a normal distribution. In practice, if n$\geq$30 we can normalize the distribution.
+\end{definition}
+
+
+\subsection*{12.3 Simulation of Random Variables}
+
+\begin{definition}
+    \textbf{Simulation of Randvar}
+\end{definition}
+
+
+\subsection*{12.4 Monte Carlo Simulation}
+
+\begin{definition}
+    \textbf{Monte Carlo Simulation}:
+    A method of estimating the value of an unkown quantity unsing inferential statistics.
+\end{definition}
+
 \end{document}
